@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://dep4nvkgfin4e"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_vmw5f"]
+[ext_resource type="Texture2D" uid="uid://btx1plb1p7i6m" path="res://world/survival/Water_Tiles.png" id="2_pbq87"]
+[ext_resource type="Texture2D" uid="uid://byqmgxalmnc3o" path="res://world/survival/Chest_Gold_strip4.png" id="3_5uuqw"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vmw5f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(973, 167)
+rotation = 3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("2_pbq87")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(218, 314)
+scale = Vector2(-5.49386, 5.37467)
+texture = ExtResource("2_pbq87")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(399, 59)
+rotation = 3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("2_pbq87")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(811, 532)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("2_pbq87")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-220, 601)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("3_5uuqw")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-217, 42)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("3_5uuqw")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(1371, 601)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("3_5uuqw")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(1372, 54)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("3_5uuqw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -6
+layout_mode = 0
+offset_left = -37969.0
+offset_top = -20611.0
+offset_right = 37770.0
+offset_bottom = 30115.0
+color = Color(0.486275, 0.729412, 0.898039, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 37.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="setings" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "setings"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/setings" to="." method="_on_setings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

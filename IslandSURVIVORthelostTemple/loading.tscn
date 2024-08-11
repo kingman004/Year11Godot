@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://cove5ou07luqc"]
+
+[ext_resource type="Texture2D" uid="uid://btx1plb1p7i6m" path="res://world/survival/Water_Tiles.png" id="1_0gqrl"]
+[ext_resource type="Texture2D" uid="uid://byqmgxalmnc3o" path="res://world/survival/Chest_Gold_strip4.png" id="2_gild6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(973, 167)
+rotation = 3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("1_0gqrl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(218, 314)
+scale = Vector2(-5.49386, 5.37467)
+texture = ExtResource("1_0gqrl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(399, 59)
+rotation = 3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("1_0gqrl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(811, 532)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("1_0gqrl")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-220, 601)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("2_gild6")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-217, 42)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("2_gild6")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(1371, 601)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("2_gild6")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(1372, 54)
+rotation = -3.14159
+scale = Vector2(5.49386, -5.37467)
+texture = ExtResource("2_gild6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -6
+offset_left = -37969.0
+offset_top = -20611.0
+offset_right = 37770.0
+offset_bottom = 30115.0
+color = Color(0.486275, 0.729412, 0.898039, 1)

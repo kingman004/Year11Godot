@@ -1,5 +1,6 @@
 extends CharacterBody2D
  
+@onready var sprite_2d = $CanvasLayer/Sprite2D
 
 @export var SPEED = 50.0
 @export var ACCERATION = 20
@@ -34,8 +35,27 @@ var last_direction="right"
 			#anim_name = "walk down"
 	#sprite.play(anim_name)
 	#
-		
 
+
+
+func _process(delta):
+	var sticks = get_tree().get_nodes_in_group("Stick")
+	var current_position = global_position
+	var closest_stick = null
+	var min_distance = INF
+	
+	for stick in sticks:
+		var stick_position = stick.global_position
+		var distance = current_position.distance_to(stick_position)
+		if distance < min_distance:
+			min_distance = distance
+			closest_stick = stick
+	
+	if closest_stick != null:
+		var closest_stick_position = closest_stick.global_position
+		var angle = (closest_stick_position - current_position).angle()
+		sprite_2d.rotation = angle
+#chatgpt^
 func _physics_process(delta):
 	var anim_name
 	if Input.is_action_pressed("run"):
@@ -64,3 +84,28 @@ func _physics_process(delta):
 	sprite.play(anim_name)
 	#set_animation(anim_name)
 	move_and_slide()
+
+
+
+# Declare the progress bars as export variables so they can be set in the inspector
+@export var progress_bar_1 : ProgressBar
+@export var progress_bar_2 : ProgressBar
+
+func _ready():
+	# Connect the "value_changed" signal of progress_bar_1 to a method in this script
+
+	
+	# Initially set progress_bar_2 to be invisible
+	progress_bar_2.visible = false
+
+
+func _on_progress_bar_value_changed(value):
+		# Check if the value of progress_bar_1 has reached 100
+	if value >= 10:
+		# Make progress_bar_2 visible
+		progress_bar_2.visible = true
+		progress_bar_1.visible = false
+	else:
+		# Ensure progress_bar_2 is not visible if progress_bar_1 is not at 100
+		progress_bar_2.visible = false
+

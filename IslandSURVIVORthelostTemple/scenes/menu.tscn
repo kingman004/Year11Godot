@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddkw2cuuo3qha"]
+
+[ext_resource type="Script" path="res://scenes/Menu.gd" id="1_vf3f6"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_vf3f6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 521.0
+offset_top = 236.0
+offset_right = 591.0
+offset_bottom = 372.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play
+"
+
+[node name="Settings" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Credits" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits
+"
+
+[node name="Quit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = -6
+offset_left = -38735.0
+offset_top = -20942.0
+offset_right = 37004.0
+offset_bottom = 29784.0
+color = Color(0.486275, 0.729412, 0.898039, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.616
+anchor_top = 0.5
+anchor_right = 0.616
+anchor_bottom = 0.508
+offset_left = 455.36
+offset_top = 144.0
+offset_right = 701.36
+offset_bottom = 193.816
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Island Survior the lost Temple
+"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Credits" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

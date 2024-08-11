@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddeagbc67f52m"]
+
+[ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_menus_template/base/scenes/LoadingScreen/LoadingScreen.tscn" id="1_2dnq1"]
+[ext_resource type="Script" path="res://addons/maaacks_menus_template/examples/scenes/LoadingScreen/LoadingScreen.gd" id="2_5h2y6"]
+
+[node name="LoadingScreen" instance=ExtResource("1_2dnq1")]
+script = ExtResource("2_5h2y6")
+
+[node name="ColorRect" type="ColorRect" parent="Control" index="1"]
+z_index = -6
+offset_left = -37969.0
+offset_top = -20611.0
+offset_right = 37770.0
+offset_bottom = 30115.0
+mouse_filter = 2
+color = Color(0.486275, 0.729412, 0.898039, 1)
+
+[node name="LoadingTimer" parent="." index="1"]
+wait_time = 100000.0

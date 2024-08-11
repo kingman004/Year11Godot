@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://sefqtmaq4fo6"]
+
+[ext_resource type="Script" path="res://scenes/Settings.gd" id="1_gmpyp"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 620.0
+offset_top = 303.0
+offset_right = 620.0
+offset_bottom = 303.0
+script = ExtResource("1_gmpyp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -6
+layout_mode = 0
+offset_left = -38735.0
+offset_top = -20942.0
+offset_right = 37004.0
+offset_bottom = 29784.0
+color = Color(0.486275, 0.729412, 0.898039, 1)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -3.0
+offset_right = 92.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Settings Not available"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_left = -23.0
+offset_top = 35.0
+offset_right = 34.0
+offset_bottom = 67.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Goback" type="Button" parent="MarginContainer/VBoxContainer"]
+top_level = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Go Back
+"
