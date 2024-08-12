@@ -576,36 +576,8 @@ offset_right = 37004.0
 offset_bottom = 29784.0
 color = Color(0.486275, 0.729412, 0.898039, 1)
 
-[node name="Stick" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(15, -128)
-
-[node name="Stick2" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(129, -53)
-collision_layer = 0
-
-[node name="Stick3" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(18, -173)
-
-[node name="Stick4" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(370, 523)
-
-[node name="Stick5" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(350, 400)
-
-[node name="Stick6" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(230, 39)
-
-[node name="Stick7" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(274, 182)
-
-[node name="Stick8" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(186, 123)
-
-[node name="Stick9" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(308, 186)
-
 [node name="Stick10" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(318, 248)
+position = Vector2(144, -62)
 
 [node name="leaves" parent="." instance=ExtResource("10_4gs1g")]
 position = Vector2(74, -66)

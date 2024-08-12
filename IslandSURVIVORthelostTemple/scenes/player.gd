@@ -40,6 +40,8 @@ var last_direction="right"
 
 func _process(delta):
 	var sticks = get_tree().get_nodes_in_group("Stick")
+	if sticks.size() == 0:
+		sticks = get_tree().get_nodes_in_group("Leaves")
 	var current_position = global_position
 	var closest_stick = null
 	var min_distance = INF
