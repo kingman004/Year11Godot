@@ -104,10 +104,10 @@ func _ready():
 func _on_progress_bar_value_changed(value):
 		# Check if the value of progress_bar_1 has reached 100
 	if value >= 10:
+		PlayerStats.collecting = "leaves"
 		# Make progress_bar_2 visible
 		progress_bar_2.visible = true
 		progress_bar_1.visible = false
 	else:
 		# Ensure progress_bar_2 is not visible if progress_bar_1 is not at 100
 		progress_bar_2.visible = false
-

@@ -570,15 +570,82 @@ layer_2/tile_data = PackedInt32Array(-3211261, 458753, 2, -3211260, 458753, 2, -
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -6
-offset_left = -38735.0
-offset_top = -20942.0
-offset_right = 37004.0
-offset_bottom = 29784.0
+offset_left = -38819.0
+offset_top = -21005.0
+offset_right = 36920.0
+offset_bottom = 29721.0
 color = Color(0.486275, 0.729412, 0.898039, 1)
 
-[node name="Stick10" parent="." instance=ExtResource("8_jlua1")]
-position = Vector2(144, -62)
+[node name="Sticks" type="Node2D" parent="."]
 
-[node name="leaves" parent="." instance=ExtResource("10_4gs1g")]
+[node name="Stick" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(136, -77)
+
+[node name="Stick2" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(122, -94)
+
+[node name="Stick3" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(223, -146)
+
+[node name="Stick4" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(-22, -103)
+
+[node name="Stick5" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(140, -178)
+
+[node name="Stick6" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(22, -102)
+
+[node name="Stick7" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(77, -220)
+
+[node name="Stick8" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(-1, -207)
+
+[node name="Stick9" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(-31, -134)
+
+[node name="Stick10" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(37, -190)
+
+[node name="Leaves" type="Node2D" parent="."]
+
+[node name="leaves" parent="Leaves" instance=ExtResource("10_4gs1g")]
 position = Vector2(74, -66)
+priority = 1
+
+[node name="leaves2" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(163, -112)
+priority = 1
+
+[node name="leaves3" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(142, -135)
+priority = 1
+
+[node name="leaves4" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(88, -149)
+priority = 1
+
+[node name="leaves5" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(60, -165)
+priority = 1
+
+[node name="leaves6" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(1, -145)
+priority = 1
+
+[node name="leaves7" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(18, -168)
+priority = 1
+
+[node name="leaves8" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(61, -136)
+priority = 1
+
+[node name="leaves9" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(156, -36)
+priority = 1
+
+[node name="leaves10" parent="Leaves" instance=ExtResource("10_4gs1g")]
+position = Vector2(46, -86)
 priority = 1

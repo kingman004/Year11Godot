@@ -1,7 +1,7 @@
 extends Node
 var sticks = 0
 var leaves = 0
-
+var collecting = "sticks"
 func add_stick(num):
 	sticks += num
 
