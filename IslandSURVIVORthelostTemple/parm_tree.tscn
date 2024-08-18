@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq2p7tsfw4uem"]
+
+[ext_resource type="Script" path="res://scenes/leaves.gd" id="1_08eyo"]
+[ext_resource type="Texture2D" uid="uid://bxsip6roga6wn" path="res://world/survival/Parm Tree .png.png" id="2_sk5ef"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ej50v"]
+radius = 4.0
+height = 22.0
+
+[node name="parm tree" type="Area2D" groups=["Leaves"]]
+position = Vector2(190, 2)
+collision_mask = 2
+script = ExtResource("1_08eyo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 0.5)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("2_sk5ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+shape = SubResource("CapsuleShape2D_ej50v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
