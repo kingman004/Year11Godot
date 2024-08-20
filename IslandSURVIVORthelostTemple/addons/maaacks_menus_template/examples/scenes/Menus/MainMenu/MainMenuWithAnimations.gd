@@ -33,3 +33,7 @@ func _input(event):
 func _ready():
 	super._ready()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
+
+
+func _on_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res:// tutorial world.tscn")

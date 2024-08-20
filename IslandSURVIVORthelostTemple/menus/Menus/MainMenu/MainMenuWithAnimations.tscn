@@ -387,10 +387,10 @@ text = "V 0.02"
 modulate = Color(1, 1, 1, 0)
 lock = true
 
-[node name="PlayButton2" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1"]
+[node name="Tutorial" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Tutorial"
 
-[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/PlayButton2" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/Tutorial" to="." method="_on_tutorial_pressed"]
