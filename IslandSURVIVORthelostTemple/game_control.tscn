@@ -1,0 +1,154 @@
+[gd_scene load_steps=14 format=3 uid="uid://bm38tpwa2q8ea"]
+
+[ext_resource type="Texture2D" uid="uid://cx7024hu7phst" path="res://overlays/Keyboard Letters and Symbols-2.png.png" id="1_gtr4q"]
+[ext_resource type="Texture2D" uid="uid://ch6at28yxd211" path="res://overlays/Keyboard Letters and Symbols-7.png.png" id="2_scobm"]
+[ext_resource type="Texture2D" uid="uid://b8pdf312hjqua" path="res://overlays/Keyboard Letters and Symbols-4.png.png" id="3_1aqlu"]
+[ext_resource type="Texture2D" uid="uid://cea4h0677sbl4" path="res://overlays/Keyboard Letters and Symbols-9.png.png" id="4_xhcaj"]
+[ext_resource type="Texture2D" uid="uid://bvjh8si7tns55" path="res://overlays/Keyboard Letters and Symbols-5.png.png" id="5_t7e4d"]
+[ext_resource type="Texture2D" uid="uid://2glwh7du3ces" path="res://overlays/Keyboard Letters and Symbols-10.png.png" id="6_x5mau"]
+[ext_resource type="Texture2D" uid="uid://cq6ug0ioujgh7" path="res://overlays/Keyboard Letters and Symbols-3.png.png" id="7_fqqyo"]
+[ext_resource type="Texture2D" uid="uid://bi5yevy76jyq3" path="res://overlays/Keyboard Letters and Symbols-8.png.png" id="8_7s58v"]
+[ext_resource type="Texture2D" uid="uid://0hs3kblpphl7" path="res://overlays/Keyboard Letters and Symbols-1.png.png" id="9_qh3g4"]
+[ext_resource type="Texture2D" uid="uid://ck2d6snyrsf3d" path="res://overlays/Keyboard Letters and Symbols-6.png.png" id="10_sio1w"]
+[ext_resource type="Texture2D" uid="uid://0dcr26wbl5gh" path="res://overlays/Keyboard Extras-5.png.png" id="11_j0ub7"]
+[ext_resource type="Texture2D" uid="uid://dfh32cvvpp7iq" path="res://overlays/Keyboard Extras-21.png.png" id="12_m2gmu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qhd2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gtr4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_scobm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gtr4q")
+}],
+"loop": false,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1aqlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xhcaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1aqlu")
+}],
+"loop": false,
+"name": &"D",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t7e4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x5mau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t7e4d")
+}],
+"loop": false,
+"name": &"E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fqqyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7s58v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fqqyo")
+}],
+"loop": false,
+"name": &"S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qh3g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sio1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qh3g4")
+}],
+"loop": false,
+"name": &"W",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_j0ub7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m2gmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j0ub7")
+}],
+"loop": false,
+"name": &"shift",
+"speed": 5.0
+}]
+
+[node name="game Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="W" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0qhd2")
+animation = &"W"
+frame = 2
+frame_progress = 1.0
+
+[node name="A" type="AnimatedSprite2D" parent="."]
+position = Vector2(-17, 17)
+sprite_frames = SubResource("SpriteFrames_0qhd2")
+animation = &"A"
+frame = 2
+frame_progress = 1.0
+
+[node name="S" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 17)
+sprite_frames = SubResource("SpriteFrames_0qhd2")
+animation = &"S"
+frame = 2
+frame_progress = 1.0
+
+[node name="D" type="AnimatedSprite2D" parent="."]
+position = Vector2(18, 17)
+sprite_frames = SubResource("SpriteFrames_0qhd2")
+animation = &"D"
+frame = 2
+frame_progress = 1.0
+
+[node name="shift" type="AnimatedSprite2D" parent="."]
+position = Vector2(55, 17)
+sprite_frames = SubResource("SpriteFrames_0qhd2")
+animation = &"shift"
+frame = 2
+frame_progress = 1.0
+
+[node name="E" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, -6)
+sprite_frames = SubResource("SpriteFrames_0qhd2")
+animation = &"E"
+frame = 2
+frame_progress = 1.0

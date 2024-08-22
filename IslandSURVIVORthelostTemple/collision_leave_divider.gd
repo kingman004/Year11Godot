@@ -10,4 +10,5 @@ func _ready() -> void:
 func _process(delta):
 	var sticks = get_tree().get_nodes_in_group("Stick")
 	if sticks.size() == 0:
+		pass
 		
