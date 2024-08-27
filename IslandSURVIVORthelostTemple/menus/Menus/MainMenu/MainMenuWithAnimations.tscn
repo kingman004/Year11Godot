@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://de7myf2ybhwk5"]
+[gd_scene load_steps=18 format=3 uid="uid://de7myf2ybhwk5"]
 
 [ext_resource type="PackedScene" uid="uid://byvydukidk6i2" path="res://menus/Menus/MainMenu/MainMenu.tscn" id="1_0i2sc"]
 [ext_resource type="Script" path="res://addons/maaacks_menus_template/examples/scenes/Menus/MainMenu/MainMenuWithAnimations.gd" id="2_ncvk7"]
 [ext_resource type="Texture2D" uid="uid://bjn8tvdc4oi0u" path="res://world/map/Vintage_Map_1_Paper_Version.png" id="3_wru41"]
+[ext_resource type="AudioStream" uid="uid://db8ile7ithta8" path="res://sounds/island-loop-87bpm-132265.mp3" id="4_1jba4"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -370,7 +371,10 @@ anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
 [node name="BackgroundMusicPlayer" parent="." index="4"]
+stream = ExtResource("4_1jba4")
+volume_db = -14.15
 bus = &"Master"
+parameters/looping = true
 
 [node name="VersionNameLabel" parent="." index="6"]
 modulate = Color(1, 1, 1, 0)

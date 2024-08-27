@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfvald2orlx3w"]
+
+[ext_resource type="AudioStream" uid="uid://drigt82uwc083" path="res://sounds/distant-shearwaters-near-the-sea-weird-night-birds-30998.mp3" id="1_mixxe"]
+[ext_resource type="AudioStream" uid="uid://bkwsigly5048f" path="res://sounds/easter-island-5-minute-md-recording-of-waves-crashing-against-volcanic-ro1-17728.mp3" id="2_37rd8"]
+[ext_resource type="AudioStream" uid="uid://cam4n1ckhx4t6" path="res://sounds/rainforest-33441.mp3" id="3_dk75u"]
+[ext_resource type="PackedScene" uid="uid://c72femvj7j6gw" path="res://scenes/world.tscn" id="4_3cvei"]
+[ext_resource type="PackedScene" uid="uid://cjv1h2juxs3hx" path="res:// tutorial world.tscn" id="5_d4pqv"]
+
+[node name="Audio player" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_mixxe")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_37rd8")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dk75u")
+
+[node name="World" parent="." instance=ExtResource("4_3cvei")]
+
+[node name="World2" parent="." instance=ExtResource("5_d4pqv")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cjv1h2juxs3hx"]
+[gd_scene load_steps=26 format=3 uid="uid://cjv1h2juxs3hx"]
 
 [ext_resource type="Script" path="res://_tutorial_world.gd" id="1_8vjir"]
 [ext_resource type="PackedScene" uid="uid://dhdaq1vmkatbq" path="res://scenes/player.tscn" id="1_urx45"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dq2p7tsfw4uem" path="res://parm_tree.tscn" id="12_7atgx"]
 [ext_resource type="Script" path="res://leave_divider.gd" id="13_diwvo"]
 [ext_resource type="Script" path="res://parm_divider.gd" id="14_ywods"]
+[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/MusicPlayers/BackgroundMusicPlayer.tscn" id="15_tbm7q"]
+[ext_resource type="AudioStream" uid="uid://drigt82uwc083" path="res://sounds/distant-shearwaters-near-the-sea-weird-night-birds-30998.mp3" id="16_8j48o"]
+[ext_resource type="AudioStream" uid="uid://bkwsigly5048f" path="res://sounds/easter-island-5-minute-md-recording-of-waves-crashing-against-volcanic-ro1-17728.mp3" id="17_02qsd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xmn1"]
 texture = ExtResource("2_e7qy2")
@@ -710,3 +713,15 @@ position = Vector2(-119755, -50041)
 scale = Vector2(2.9077, 2.39567)
 build_mode = 1
 polygon = PackedVector2Array(41118.1, 20903.5, 41122.9, 20881, 41215.5, 20940.3, 41209.3, 20949)
+
+[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("15_tbm7q")]
+stream = ExtResource("16_8j48o")
+volume_db = -1.297
+bus = &"Master"
+parameters/looping = true
+
+[node name="BackgroundMusicPlayer2" parent="." instance=ExtResource("15_tbm7q")]
+stream = ExtResource("17_02qsd")
+volume_db = 6.463
+bus = &"Master"
+parameters/looping = true

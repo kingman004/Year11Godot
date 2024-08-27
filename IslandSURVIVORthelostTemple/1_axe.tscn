@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://xaj0ecaogdd5"]
+
+[ext_resource type="Texture2D" uid="uid://b3ib1mbbe6ndh" path="res://world/survival/1 axe.png" id="1_qbhu6"]
+
+[node name="1 axe" type="Area2D" groups=["Leaves"]]
+position = Vector2(190, 2)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.67187, 5)
+scale = Vector2(1.24375, 1.25)
+texture = ExtResource("1_qbhu6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
