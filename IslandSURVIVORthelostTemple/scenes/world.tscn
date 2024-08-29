@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c72femvj7j6gw"]
+[gd_scene load_steps=21 format=3 uid="uid://c72femvj7j6gw"]
 
 [ext_resource type="PackedScene" uid="uid://dhdaq1vmkatbq" path="res://scenes/player.tscn" id="1_d0qyc"]
 [ext_resource type="Texture2D" uid="uid://c7cn5qr6yt5x5" path="res://world/survival/Ground_Tiles.png" id="2_878p0"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/MusicPlayers/BackgroundMusicPlayer.tscn" id="10_wyn75"]
 [ext_resource type="AudioStream" uid="uid://drigt82uwc083" path="res://sounds/distant-shearwaters-near-the-sea-weird-night-birds-30998.mp3" id="11_w8485"]
 [ext_resource type="AudioStream" uid="uid://bkwsigly5048f" path="res://sounds/easter-island-5-minute-md-recording-of-waves-crashing-against-volcanic-ro1-17728.mp3" id="12_pk1wn"]
+[ext_resource type="PackedScene" uid="uid://bi4si1umdl3gj" path="res://TREEMAZE.tscn" id="13_7tloh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xmn1"]
 texture = ExtResource("2_878p0")
@@ -367,8 +368,6 @@ texture = ExtResource("3_46bj7")
 11:11/0 = 0
 12:11/0 = 0
 13:11/0 = 0
-0:12/0 = 0
-1:12/0 = 0
 2:12/0 = 0
 3:12/0 = 0
 4:12/0 = 0
@@ -381,8 +380,6 @@ texture = ExtResource("3_46bj7")
 11:12/0 = 0
 12:12/0 = 0
 13:12/0 = 0
-0:13/0 = 0
-1:13/0 = 0
 2:13/0 = 0
 3:13/0 = 0
 4:13/0 = 0
@@ -395,8 +392,6 @@ texture = ExtResource("3_46bj7")
 11:13/0 = 0
 12:13/0 = 0
 13:13/0 = 0
-0:14/0 = 0
-1:14/0 = 0
 2:14/0 = 0
 3:14/0 = 0
 4:14/0 = 0
@@ -490,6 +485,11 @@ texture = ExtResource("3_46bj7")
 11:20/0 = 0
 12:20/0 = 0
 13:20/0 = 0
+1:14/0 = 0
+0:14/0 = 0
+1:13/0 = 0
+0:13/0 = 0
+1:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glady"]
 texture = ExtResource("4_wowoq")
@@ -544,16 +544,7 @@ sources/4 = SubResource("TileSetAtlasSource_gfp8t")
 sources/5 = SubResource("TileSetAtlasSource_m7mu4")
 
 [node name="World" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_d0qyc")]
-z_index = 1
-position = Vector2(107, -64)
-collision_layer = 3
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3.5, 3.5)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -572,10 +563,10 @@ layer_2/tile_data = PackedInt32Array(-3211261, 458753, 2, -3211260, 458753, 2, -
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -6
-offset_left = -38827.0
-offset_top = -20997.0
-offset_right = 36912.0
-offset_bottom = 29729.0
+offset_left = -38796.0
+offset_top = -21017.0
+offset_right = 36943.0
+offset_bottom = 29709.0
 color = Color(0.486275, 0.729412, 0.898039, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
@@ -587,6 +578,7 @@ build_mode = 1
 polygon = PackedVector2Array(41635, 21920, 41635, 21892, 41588, 21891, 41580, 21849, 41519, 21841, 41518, 21839, 41538, 21839, 41539, 21717, 41472, 21720, 41471, 21610, 41439, 21605, 41440, 21430, 41380, 21426, 41374, 21249, 41327, 21248, 41323, 21127, 41267, 21125, 41270, 21008, 41203, 20996, 41205, 20901, 41164, 20884, 41154, 20825, 41085, 20816, 41052, 20794, 40995, 20789, 40989, 20749, 40990, 20678, 41001, 20660, 41026, 20664, 41023, 20623, 41033, 20601, 41041, 20591, 41005, 20593, 40996, 20610, 40942, 20608, 40936, 20622, 40922, 20625, 40921, 20635, 40909, 20645, 40833, 20643, 40819, 20626, 40775, 20623, 40765, 20595, 40767, 20488, 40785, 20468, 40812, 20469, 40801, 20378, 40705, 20378, 40627, 20357, 40662, 20216, 40698, 20154, 40744, 20126, 40755, 20005, 40806, 19980, 40841, 19943, 40844, 19870, 41071, 19897, 41086, 19829, 41214, 19851, 41217, 19761, 41274, 19761, 41338, 19722, 41603, 19734, 41628, 19681, 41636, 19588, 41673, 19541, 41762, 19530, 41786, 19443, 41990, 19457, 42011, 19521, 42062, 19551, 42059, 19643, 42071, 19691, 42182, 19686, 42198, 19770, 42233, 19757, 42249, 19618, 42336, 19659, 42546, 19659, 42548, 19768, 42644, 19776, 42651, 19965, 42767, 19976, 42765, 20110, 42879, 20103, 42686, 19683, 42344, 19502, 42051, 19424, 41657, 19386, 41286, 19568, 40852, 19800, 40609, 20092, 40571, 20335, 40643, 20543, 40765, 20770, 40984, 21015, 41147, 21281, 41200, 21416, 41340, 21691, 41430, 21848, 41466, 21950, 41511, 21916)
 
 [node name="Sticks" type="Node2D" parent="."]
+visible = false
 
 [node name="Stick" parent="Sticks" instance=ExtResource("8_jlua1")]
 position = Vector2(136, -77)
@@ -619,6 +611,7 @@ position = Vector2(-31, -134)
 position = Vector2(37, -190)
 
 [node name="Leaves" type="Node2D" parent="."]
+visible = false
 
 [node name="leaves" parent="Leaves" instance=ExtResource("10_4gs1g")]
 position = Vector2(74, -66)
@@ -671,3 +664,150 @@ stream = ExtResource("12_pk1wn")
 volume_db = 6.463
 bus = &"Master"
 parameters/looping = true
+
+[node name="TREEMAZE" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(194, -123)
+
+[node name="Player" parent="TREEMAZE" instance=ExtResource("1_d0qyc")]
+position = Vector2(-87, 59)
+collision_layer = 3
+
+[node name="Camera2D" type="Camera2D" parent="TREEMAZE/Player"]
+zoom = Vector2(3.5, 3.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="GreenTreeSmall_png" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(0, 15)
+
+[node name="GreenTreeSmall_png2" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+
+[node name="GreenTreeSmall_png3" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-1, -19)
+
+[node name="GreenTreeSmall_png4" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(0, -40)
+
+[node name="GreenTreeSmall_png5" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(1, -59)
+
+[node name="GreenTreeSmall_png6" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(22, -59)
+
+[node name="GreenTreeSmall_png7" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(41, -58)
+
+[node name="GreenTreeSmall_png8" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(62, -60)
+
+[node name="GreenTreeSmall_png9" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(81, -60)
+
+[node name="GreenTreeSmall_png10" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(82, -84)
+
+[node name="GreenTreeSmall_png11" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(81, -103)
+
+[node name="GreenTreeSmall_png12" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(81, -122)
+
+[node name="GreenTreeSmall_png13" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(80, -140)
+
+[node name="GreenTreeSmall_png14" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(61, -141)
+
+[node name="GreenTreeSmall_png15" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(42, -142)
+
+[node name="GreenTreeSmall_png16" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(24, -142)
+
+[node name="GreenTreeSmall_png17" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(25, -123)
+
+[node name="GreenTreeSmall_png18" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(26, -112)
+
+[node name="GreenTreeSmall_png19" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(5, -123)
+
+[node name="GreenTreeSmall_png20" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-15, -124)
+
+[node name="GreenTreeSmall_png21" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-35, -123)
+
+[node name="GreenTreeSmall_png22" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-34, -142)
+
+[node name="GreenTreeSmall_png23" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-35, -156)
+
+[node name="GreenTreeSmall_png24" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-36, -173)
+
+[node name="GreenTreeSmall_png25" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-37, -190)
+
+[node name="GreenTreeSmall_png26" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-57, -191)
+
+[node name="GreenTreeSmall_png27" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-77, -190)
+
+[node name="GreenTreeSmall_png28" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-78, -168)
+
+[node name="GreenTreeSmall_png29" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-77, -150)
+
+[node name="GreenTreeSmall_png30" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-76, -133)
+
+[node name="GreenTreeSmall_png31" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-4, 32)
+
+[node name="GreenTreeSmall_png32" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-13, 52)
+
+[node name="GreenTreeSmall_png33" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-19, 69)
+
+[node name="GreenTreeSmall_png34" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-29, 86)
+
+[node name="GreenTreeSmall_png35" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-44, 105)
+
+[node name="GreenTreeSmall_png36" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-54, 118)
+
+[node name="GreenTreeSmall_png37" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-158, 4)
+
+[node name="GreenTreeSmall_png39" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-142, -12)
+
+[node name="GreenTreeSmall_png40" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-124, -30)
+
+[node name="GreenTreeSmall_png41" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-106, -46)
+
+[node name="GreenTreeSmall_png42" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-90, -60)
+
+[node name="GreenTreeSmall_png43" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-71, -62)
+
+[node name="GreenTreeSmall_png44" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-53, -63)
+
+[node name="GreenTreeSmall_png45" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-12, -58)
+
+[node name="GreenTreeSmall_png38" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-164, 23)

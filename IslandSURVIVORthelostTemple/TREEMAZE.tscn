@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi4si1umdl3gj"]
+
+[ext_resource type="Texture2D" uid="uid://dhctpmni1jsvh" path="res://world/survival/Green Tree small.png.png" id="1_bc6bx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnb4q"]
+size = Vector2(20, 23)
+
+[node name="GreenTreeSmall_png" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_bc6bx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_cnb4q")
