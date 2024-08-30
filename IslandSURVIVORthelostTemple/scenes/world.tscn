@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c72femvj7j6gw"]
+[gd_scene load_steps=29 format=3 uid="uid://c72femvj7j6gw"]
 
 [ext_resource type="PackedScene" uid="uid://dhdaq1vmkatbq" path="res://scenes/player.tscn" id="1_d0qyc"]
 [ext_resource type="Texture2D" uid="uid://c7cn5qr6yt5x5" path="res://world/survival/Ground_Tiles.png" id="2_878p0"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://drigt82uwc083" path="res://sounds/distant-shearwaters-near-the-sea-weird-night-birds-30998.mp3" id="11_w8485"]
 [ext_resource type="AudioStream" uid="uid://bkwsigly5048f" path="res://sounds/easter-island-5-minute-md-recording-of-waves-crashing-against-volcanic-ro1-17728.mp3" id="12_pk1wn"]
 [ext_resource type="PackedScene" uid="uid://bi4si1umdl3gj" path="res://TREEMAZE.tscn" id="13_7tloh"]
+[ext_resource type="Texture2D" uid="uid://cwrmavqf2oimw" path="res://player/Health/Health Bar.png" id="13_j1thp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xmn1"]
 texture = ExtResource("2_878p0")
@@ -543,6 +544,56 @@ sources/3 = SubResource("TileSetAtlasSource_bowdo")
 sources/4 = SubResource("TileSetAtlasSource_gfp8t")
 sources/5 = SubResource("TileSetAtlasSource_m7mu4")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_memly"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(0, 0, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgawf"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(500, 0, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3swec"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(0, 201, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7rka"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(500, 201, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae3p8"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(0, 402, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kalg5"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(500, 402, 500, 201)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kx0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_memly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgawf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3swec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7rka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae3p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kalg5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
@@ -563,94 +614,92 @@ layer_2/tile_data = PackedInt32Array(-3211261, 458753, 2, -3211260, 458753, 2, -
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -6
-offset_left = -38796.0
-offset_top = -21017.0
-offset_right = 36943.0
-offset_bottom = 29709.0
+offset_left = -38613.0
+offset_top = -21077.0
+offset_right = 37126.0
+offset_bottom = 29649.0
 color = Color(0.486275, 0.729412, 0.898039, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
 position = Vector2(9, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ColorRect/StaticBody2D"]
-position = Vector2(-2227, 155)
+position = Vector2(-2427, 220)
 build_mode = 1
 polygon = PackedVector2Array(41635, 21920, 41635, 21892, 41588, 21891, 41580, 21849, 41519, 21841, 41518, 21839, 41538, 21839, 41539, 21717, 41472, 21720, 41471, 21610, 41439, 21605, 41440, 21430, 41380, 21426, 41374, 21249, 41327, 21248, 41323, 21127, 41267, 21125, 41270, 21008, 41203, 20996, 41205, 20901, 41164, 20884, 41154, 20825, 41085, 20816, 41052, 20794, 40995, 20789, 40989, 20749, 40990, 20678, 41001, 20660, 41026, 20664, 41023, 20623, 41033, 20601, 41041, 20591, 41005, 20593, 40996, 20610, 40942, 20608, 40936, 20622, 40922, 20625, 40921, 20635, 40909, 20645, 40833, 20643, 40819, 20626, 40775, 20623, 40765, 20595, 40767, 20488, 40785, 20468, 40812, 20469, 40801, 20378, 40705, 20378, 40627, 20357, 40662, 20216, 40698, 20154, 40744, 20126, 40755, 20005, 40806, 19980, 40841, 19943, 40844, 19870, 41071, 19897, 41086, 19829, 41214, 19851, 41217, 19761, 41274, 19761, 41338, 19722, 41603, 19734, 41628, 19681, 41636, 19588, 41673, 19541, 41762, 19530, 41786, 19443, 41990, 19457, 42011, 19521, 42062, 19551, 42059, 19643, 42071, 19691, 42182, 19686, 42198, 19770, 42233, 19757, 42249, 19618, 42336, 19659, 42546, 19659, 42548, 19768, 42644, 19776, 42651, 19965, 42767, 19976, 42765, 20110, 42879, 20103, 42686, 19683, 42344, 19502, 42051, 19424, 41657, 19386, 41286, 19568, 40852, 19800, 40609, 20092, 40571, 20335, 40643, 20543, 40765, 20770, 40984, 21015, 41147, 21281, 41200, 21416, 41340, 21691, 41430, 21848, 41466, 21950, 41511, 21916)
 
 [node name="Sticks" type="Node2D" parent="."]
-visible = false
 
 [node name="Stick" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(136, -77)
+position = Vector2(254, -109)
 
 [node name="Stick2" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(122, -94)
+position = Vector2(500, -112)
 
 [node name="Stick3" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(223, -146)
+position = Vector2(552, -243)
 
 [node name="Stick4" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(-22, -103)
+position = Vector2(487, -291)
 
 [node name="Stick5" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(140, -178)
+position = Vector2(487, -356)
 
 [node name="Stick6" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(22, -102)
+position = Vector2(381, -409)
 
 [node name="Stick7" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(77, -220)
+position = Vector2(227, -324)
 
 [node name="Stick8" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(-1, -207)
+position = Vector2(6, -357)
 
 [node name="Stick9" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(-31, -134)
+position = Vector2(182, -397)
 
 [node name="Stick10" parent="Sticks" instance=ExtResource("8_jlua1")]
-position = Vector2(37, -190)
+position = Vector2(139, -206)
 
 [node name="Leaves" type="Node2D" parent="."]
-visible = false
 
 [node name="leaves" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(74, -66)
+position = Vector2(249, -233)
 priority = 1
 
 [node name="leaves2" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(163, -112)
+position = Vector2(411, -277)
 priority = 1
 
 [node name="leaves3" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(142, -135)
+position = Vector2(450, -157)
 priority = 1
 
 [node name="leaves4" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(88, -149)
+position = Vector2(310, -380)
 priority = 1
 
 [node name="leaves5" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(60, -165)
+position = Vector2(70, -272)
 priority = 1
 
 [node name="leaves6" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(1, -145)
+position = Vector2(149, -398)
 priority = 1
 
 [node name="leaves7" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(18, -168)
+position = Vector2(243, -401)
 priority = 1
 
 [node name="leaves8" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(61, -136)
+position = Vector2(501, -327)
 priority = 1
 
 [node name="leaves9" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(156, -36)
+position = Vector2(552, -398)
 priority = 1
 
 [node name="leaves10" parent="Leaves" instance=ExtResource("10_4gs1g")]
-position = Vector2(46, -86)
+position = Vector2(411, -226)
 priority = 1
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("10_wyn75")]
@@ -670,13 +719,20 @@ y_sort_enabled = true
 position = Vector2(194, -123)
 
 [node name="Player" parent="TREEMAZE" instance=ExtResource("1_d0qyc")]
-position = Vector2(-87, 59)
+position = Vector2(-103, 50)
 collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="TREEMAZE/Player"]
-zoom = Vector2(3.5, 3.5)
+position = Vector2(1, 1)
+zoom = Vector2(10, 10)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="HealthBar" type="AnimatedSprite2D" parent="TREEMAZE/Player/Camera2D"]
+position = Vector2(-47.5319, -28.0078)
+scale = Vector2(0.08963, 0.08963)
+sprite_frames = SubResource("SpriteFrames_8kx0t")
+frame_progress = 0.378111
 
 [node name="GreenTreeSmall_png" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(0, 15)
@@ -702,10 +758,423 @@ position = Vector2(41, -58)
 position = Vector2(62, -60)
 
 [node name="GreenTreeSmall_png9" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(81, -60)
+position = Vector2(83, -59)
+
+[node name="GreenTreeSmall_png73" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(83, -59)
+
+[node name="GreenTreeSmall_png74" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(101, -59)
+
+[node name="GreenTreeSmall_png75" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(102, -41)
+
+[node name="GreenTreeSmall_png76" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(40, 39)
+
+[node name="GreenTreeSmall_png84" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(20, 39)
+
+[node name="GreenTreeSmall_png85" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(6, 39)
+
+[node name="GreenTreeSmall_png77" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(53, -26)
+
+[node name="GreenTreeSmall_png78" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(60, 39)
+
+[node name="GreenTreeSmall_png79" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(82, 39)
+
+[node name="GreenTreeSmall_png80" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(104, 19)
+
+[node name="GreenTreeSmall_png81" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(104, 39)
+
+[node name="GreenTreeSmall_png82" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(123, 39)
+
+[node name="GreenTreeSmall_png83" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(144, 39)
+
+[node name="GreenTreeSmall_png86" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(160, 39)
+
+[node name="GreenTreeSmall_png87" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, 39)
+
+[node name="GreenTreeSmall_png88" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, 19)
+
+[node name="GreenTreeSmall_png89" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, -3)
+
+[node name="GreenTreeSmall_png90" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, -26)
+
+[node name="GreenTreeSmall_png91" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, -48)
+
+[node name="GreenTreeSmall_png92" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, -70)
+
+[node name="GreenTreeSmall_png93" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(286, -90)
+
+[node name="GreenTreeSmall_png94" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(286, -150)
+
+[node name="GreenTreeSmall_png95" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, -126)
+
+[node name="GreenTreeSmall_png96" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, -144)
+
+[node name="GreenTreeSmall_png97" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(181, -165)
+
+[node name="GreenTreeSmall_png98" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(160, -168)
+
+[node name="GreenTreeSmall_png99" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(141, -168)
+
+[node name="GreenTreeSmall_png206" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(141, -168)
+
+[node name="GreenTreeSmall_png100" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(124, -185)
+
+[node name="GreenTreeSmall_png101" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(124, -185)
+
+[node name="GreenTreeSmall_png102" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(130, -142)
+
+[node name="GreenTreeSmall_png207" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(125, -156)
+
+[node name="GreenTreeSmall_png208" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(117, -230)
+
+[node name="GreenTreeSmall_png209" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(238, -294)
+
+[node name="GreenTreeSmall_png210" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(231, -226)
+
+[node name="GreenTreeSmall_png211" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(238, -100)
+
+[node name="GreenTreeSmall_png212" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(211, -133)
+
+[node name="GreenTreeSmall_png213" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(217, -64)
+
+[node name="GreenTreeSmall_png214" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(211, -68)
+
+[node name="GreenTreeSmall_png215" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(354, -168)
+
+[node name="GreenTreeSmall_png103" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(166, -185)
+
+[node name="GreenTreeSmall_png104" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(181, -185)
+
+[node name="GreenTreeSmall_png105" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(160, -209)
+
+[node name="GreenTreeSmall_png106" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(161, -233)
+
+[node name="GreenTreeSmall_png107" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(22, -274)
+
+[node name="GreenTreeSmall_png108" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(20, -292)
+
+[node name="GreenTreeSmall_png109" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(37, -316)
+
+[node name="GreenTreeSmall_png110" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(53, -316)
+
+[node name="GreenTreeSmall_png111" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(74, -316)
+
+[node name="GreenTreeSmall_png112" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(160, -257)
+
+[node name="GreenTreeSmall_png113" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(95, -316)
+
+[node name="GreenTreeSmall_png114" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(74, -292)
+
+[node name="GreenTreeSmall_png115" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(74, -273)
+
+[node name="GreenTreeSmall_png116" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(75, -254)
+
+[node name="GreenTreeSmall_png117" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(17, -316)
+
+[node name="GreenTreeSmall_png118" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(116, -316)
+
+[node name="GreenTreeSmall_png119" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(137, -316)
+
+[node name="GreenTreeSmall_png120" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(137, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png121" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(158, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png122" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(176, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png123" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(197, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png124" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(217, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png125" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(236, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png126" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(256, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png127" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(274, -316)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png128" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(202, -204)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png129" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(202, -226)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png130" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(202, -250)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png131" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(202, -262)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png132" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(273, -262)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png133" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(272, -238)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png134" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(273, -215)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png135" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(269.902, -196.657)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png136" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(268.902, -172.657)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png137" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(269.902, -149.657)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png138" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(307, -90)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png153" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(308, -68)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png154" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(367, -68)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png177" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(367, -45)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png178" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(370, -26)
+
+[node name="GreenTreeSmall_png179" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(367, -5)
+
+[node name="GreenTreeSmall_png180" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(350, 17)
+
+[node name="GreenTreeSmall_png181" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(333, 29)
+
+[node name="GreenTreeSmall_png182" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(313, 31)
+
+[node name="GreenTreeSmall_png183" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(293, 31)
+
+[node name="GreenTreeSmall_png184" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(286, 35)
+
+[node name="GreenTreeSmall_png155" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(369, -90)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png156" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(387, -90)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png157" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(387, -90)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png158" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(389, -118)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png159" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(389, -142)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png160" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(387, -168)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png161" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(387, -190)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png162" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(388, -204)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png163" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(386, -221)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png173" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(307, -178)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png174" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(307, -238)
+
+[node name="GreenTreeSmall_png175" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(307, -261)
+
+[node name="GreenTreeSmall_png176" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(287, -262)
+
+[node name="GreenTreeSmall_png164" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(386, -242)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png165" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(386, -261)
+
+[node name="GreenTreeSmall_png166" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(386, -281)
+
+[node name="GreenTreeSmall_png167" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(386, -305)
+
+[node name="GreenTreeSmall_png168" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(366, -316)
+
+[node name="GreenTreeSmall_png169" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(346, -316)
+
+[node name="GreenTreeSmall_png170" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(326, -316)
+
+[node name="GreenTreeSmall_png171" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(306, -316)
+
+[node name="GreenTreeSmall_png172" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(293, -316)
+
+[node name="GreenTreeSmall_png139" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(307, -153)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png140" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(269.902, -84.6573)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png141" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(269.902, -64.6573)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png142" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(308, -25)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png143" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(308, -39)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png144" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(269.902, 6.34274)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png145" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(268.902, 30.3427)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png146" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(248, 35)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png147" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(233, 38)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png148" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(217, 39)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png149" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(197, 39)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png150" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(202, 39)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png151" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(187, 39)
+rotation = -0.0168869
+
+[node name="GreenTreeSmall_png152" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(225, -16)
+rotation = -0.0168869
 
 [node name="GreenTreeSmall_png10" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(82, -84)
+position = Vector2(101, -105)
 
 [node name="GreenTreeSmall_png11" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(81, -103)
@@ -714,7 +1183,7 @@ position = Vector2(81, -103)
 position = Vector2(81, -122)
 
 [node name="GreenTreeSmall_png13" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(80, -140)
+position = Vector2(80, -138)
 
 [node name="GreenTreeSmall_png14" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(61, -141)
@@ -811,3 +1280,144 @@ position = Vector2(-12, -58)
 
 [node name="GreenTreeSmall_png38" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(-164, 23)
+
+[node name="GreenTreeSmall_png46" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-109, -60)
+
+[node name="GreenTreeSmall_png47" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-128, -62)
+
+[node name="GreenTreeSmall_png48" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-148, -72)
+
+[node name="GreenTreeSmall_png49" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-148, -92)
+
+[node name="GreenTreeSmall_png50" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-149, -110)
+
+[node name="GreenTreeSmall_png51" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-98, -133)
+
+[node name="GreenTreeSmall_png52" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-148, -130)
+
+[node name="GreenTreeSmall_png53" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-149, -150)
+
+[node name="GreenTreeSmall_png54" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-149, -173)
+
+[node name="GreenTreeSmall_png55" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-148, -191)
+
+[node name="GreenTreeSmall_png185" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-168, -192)
+
+[node name="GreenTreeSmall_png186" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-188, -190)
+
+[node name="GreenTreeSmall_png187" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-203, -189)
+
+[node name="GreenTreeSmall_png188" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-223, -189)
+
+[node name="GreenTreeSmall_png189" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-223, -213)
+
+[node name="GreenTreeSmall_png190" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-223, -233)
+
+[node name="GreenTreeSmall_png191" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-223, -250)
+
+[node name="GreenTreeSmall_png192" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-223, -274)
+
+[node name="GreenTreeSmall_png193" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-223, -297)
+
+[node name="GreenTreeSmall_png194" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-223, -316)
+
+[node name="GreenTreeSmall_png195" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-202, -316)
+
+[node name="GreenTreeSmall_png196" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-181.5, -316)
+
+[node name="GreenTreeSmall_png197" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-160.5, -316)
+
+[node name="GreenTreeSmall_png198" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-140.5, -316)
+
+[node name="GreenTreeSmall_png199" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-119.5, -316)
+
+[node name="GreenTreeSmall_png200" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-99, -316)
+
+[node name="GreenTreeSmall_png201" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-78, -316)
+
+[node name="GreenTreeSmall_png202" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-66.5, -316)
+
+[node name="GreenTreeSmall_png203" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-45.5, -316)
+
+[node name="GreenTreeSmall_png204" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-25, -316)
+
+[node name="GreenTreeSmall_png205" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-4, -316)
+
+[node name="GreenTreeSmall_png57" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(6, -204)
+
+[node name="GreenTreeSmall_png58" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(6, -185)
+
+[node name="GreenTreeSmall_png59" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-148, -249)
+
+[node name="GreenTreeSmall_png60" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-128, -249)
+
+[node name="GreenTreeSmall_png61" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-115, -249)
+
+[node name="GreenTreeSmall_png62" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-96, -249)
+
+[node name="GreenTreeSmall_png63" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-77, -249)
+
+[node name="GreenTreeSmall_png64" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-69, -249)
+
+[node name="GreenTreeSmall_png65" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-50, -249)
+
+[node name="GreenTreeSmall_png66" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-33, -249)
+
+[node name="GreenTreeSmall_png67" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(-16, -249)
+
+[node name="GreenTreeSmall_png68" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(4, -250)
+
+[node name="GreenTreeSmall_png69" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(24, -250)
+
+[node name="GreenTreeSmall_png70" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(60, -161)
+
+[node name="GreenTreeSmall_png71" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(60, -180)
+
+[node name="GreenTreeSmall_png72" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
+position = Vector2(60, -204)
