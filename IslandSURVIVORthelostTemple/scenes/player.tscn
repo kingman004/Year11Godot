@@ -974,7 +974,7 @@ expand_mode = 2
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/CenterContainer/VBoxContainer/StickProgress"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-max_value = 10.0
+max_value = 30.0
 
 [node name="LeavesProgress" type="HBoxContainer" parent="CanvasLayer/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
