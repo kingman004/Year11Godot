@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c72femvj7j6gw"]
+[gd_scene load_steps=40 format=3 uid="uid://c72femvj7j6gw"]
 
 [ext_resource type="PackedScene" uid="uid://dhdaq1vmkatbq" path="res://scenes/player.tscn" id="1_d0qyc"]
 [ext_resource type="Texture2D" uid="uid://c7cn5qr6yt5x5" path="res://world/survival/Ground_Tiles.png" id="2_878p0"]
@@ -10,13 +10,64 @@
 [ext_resource type="PackedScene" uid="uid://nk6fgfv10lhd" path="res://scenes/stick.tscn" id="8_jlua1"]
 [ext_resource type="PackedScene" uid="uid://dtoje4njysqpx" path="res://scenes/leaves.tscn" id="10_4gs1g"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/MusicPlayers/BackgroundMusicPlayer.tscn" id="10_wyn75"]
+[ext_resource type="AudioStream" uid="uid://cam4n1ckhx4t6" path="res://sounds/rainforest-33441.mp3" id="11_7juw6"]
 [ext_resource type="AudioStream" uid="uid://drigt82uwc083" path="res://sounds/distant-shearwaters-near-the-sea-weird-night-birds-30998.mp3" id="11_w8485"]
-[ext_resource type="AudioStream" uid="uid://bkwsigly5048f" path="res://sounds/easter-island-5-minute-md-recording-of-waves-crashing-against-volcanic-ro1-17728.mp3" id="12_pk1wn"]
 [ext_resource type="PackedScene" uid="uid://bi4si1umdl3gj" path="res://TREEMAZE.tscn" id="13_7tloh"]
 [ext_resource type="Texture2D" uid="uid://cwrmavqf2oimw" path="res://player/Health/Health Bar.png" id="13_j1thp"]
 [ext_resource type="Texture2D" uid="uid://m5qekmnky0d4" path="res://world/Pixel Art Top Down - Basic/TX Props.png" id="15_aqlyp"]
 [ext_resource type="Texture2D" uid="uid://2rexe8xlyqsh" path="res://world/Pixel Art Top Down - Basic/TX Tileset Wall.png" id="16_2gicg"]
 [ext_resource type="Script" path="res://scenes/door.gd" id="16_jhysh"]
+[ext_resource type="Script" path="res://scenes/dark.gd" id="18_nyt27"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_memly"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(0, 0, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgawf"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(500, 0, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3swec"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(0, 201, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7rka"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(500, 201, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae3p8"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(0, 402, 500, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kalg5"]
+atlas = ExtResource("13_j1thp")
+region = Rect2(500, 402, 500, 201)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kx0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_memly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgawf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3swec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7rka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae3p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kalg5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xmn1"]
 texture = ExtResource("2_878p0")
@@ -547,56 +598,6 @@ sources/3 = SubResource("TileSetAtlasSource_bowdo")
 sources/4 = SubResource("TileSetAtlasSource_gfp8t")
 sources/5 = SubResource("TileSetAtlasSource_m7mu4")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_memly"]
-atlas = ExtResource("13_j1thp")
-region = Rect2(0, 0, 500, 201)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgawf"]
-atlas = ExtResource("13_j1thp")
-region = Rect2(500, 0, 500, 201)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3swec"]
-atlas = ExtResource("13_j1thp")
-region = Rect2(0, 201, 500, 201)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a7rka"]
-atlas = ExtResource("13_j1thp")
-region = Rect2(500, 201, 500, 201)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ae3p8"]
-atlas = ExtResource("13_j1thp")
-region = Rect2(0, 402, 500, 201)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kalg5"]
-atlas = ExtResource("13_j1thp")
-region = Rect2(500, 402, 500, 201)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8kx0t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_memly")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dgawf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3swec")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a7rka")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ae3p8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kalg5")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rdkg"]
 atlas = ExtResource("15_aqlyp")
 region = Rect2(15, 87, 62, 70)
@@ -633,17 +634,27 @@ size = Vector2(500, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52hyf"]
 size = Vector2(158, 63)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgdj0"]
+size = Vector2(25, 28)
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
-[node name="dark" type="ColorRect" parent="."]
-visible = false
-z_index = 5
-offset_left = -37689.0
-offset_top = -21375.0
-offset_right = 38050.0
-offset_bottom = 29351.0
-color = Color(0.203922, 0.203922, 0.203922, 0.952941)
+[node name="Player" parent="." instance=ExtResource("1_d0qyc")]
+position = Vector2(74, -60)
+collision_layer = 3
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(7, -6)
+zoom = Vector2(10, 10)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="HealthBar" type="AnimatedSprite2D" parent="Player/Camera2D"]
+position = Vector2(-47.5319, -28.0078)
+scale = Vector2(0.08963, 0.08963)
+sprite_frames = SubResource("SpriteFrames_8kx0t")
+frame_progress = 0.378111
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -750,6 +761,24 @@ position = Vector2(76, -299)
 [node name="Stick24" parent="Sticks" instance=ExtResource("8_jlua1")]
 position = Vector2(87, -331)
 
+[node name="Stick25" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(41, -407)
+
+[node name="Stick26" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(150, -486)
+
+[node name="Stick27" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(304, -489)
+
+[node name="Stick28" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(315, -391)
+
+[node name="Stick29" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(290, -311)
+
+[node name="Stick30" parent="Sticks" instance=ExtResource("8_jlua1")]
+position = Vector2(73, -223)
+
 [node name="Leaves" type="Node2D" parent="."]
 position = Vector2(30, -455)
 
@@ -795,35 +824,13 @@ priority = 1
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("10_wyn75")]
 stream = ExtResource("11_w8485")
-volume_db = -1.297
-bus = &"Master"
-parameters/looping = true
-
-[node name="BackgroundMusicPlayer2" parent="." instance=ExtResource("10_wyn75")]
-stream = ExtResource("12_pk1wn")
-volume_db = 6.463
+volume_db = 7.495
 bus = &"Master"
 parameters/looping = true
 
 [node name="TREEMAZE" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(194, -123)
-
-[node name="Player" parent="TREEMAZE" instance=ExtResource("1_d0qyc")]
-position = Vector2(-68, 15)
-collision_layer = 3
-
-[node name="Camera2D" type="Camera2D" parent="TREEMAZE/Player"]
-position = Vector2(7, -6)
-zoom = Vector2(10, 10)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
-[node name="HealthBar" type="AnimatedSprite2D" parent="TREEMAZE/Player/Camera2D"]
-position = Vector2(-47.5319, -28.0078)
-scale = Vector2(0.08963, 0.08963)
-sprite_frames = SubResource("SpriteFrames_8kx0t")
-frame_progress = 0.378111
 
 [node name="GreenTreeSmall_png" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(0, 15)
@@ -1170,7 +1177,7 @@ position = Vector2(176, -70)
 position = Vector2(286, -90)
 
 [node name="GreenTreeSmall_png94" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(286, -150)
+position = Vector2(293, -149)
 
 [node name="GreenTreeSmall_png95" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(176, -126)
@@ -1206,7 +1213,7 @@ position = Vector2(125, -156)
 position = Vector2(117, -230)
 
 [node name="GreenTreeSmall_png209" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(238, -294)
+position = Vector2(237, -305)
 
 [node name="GreenTreeSmall_png210" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(231, -226)
@@ -1218,10 +1225,10 @@ position = Vector2(238, -100)
 position = Vector2(211, -133)
 
 [node name="GreenTreeSmall_png213" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(217, -64)
+position = Vector2(204, -48)
 
 [node name="GreenTreeSmall_png214" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(211, -68)
+position = Vector2(197, -62)
 
 [node name="GreenTreeSmall_png215" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(354, -168)
@@ -1346,7 +1353,7 @@ position = Vector2(268.902, -172.657)
 rotation = -0.0168869
 
 [node name="GreenTreeSmall_png137" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(269.902, -149.657)
+position = Vector2(273, -149)
 rotation = -0.0168869
 
 [node name="GreenTreeSmall_png138" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
@@ -1459,11 +1466,11 @@ position = Vector2(386, -221)
 rotation = -0.0168869
 
 [node name="GreenTreeSmall_png173" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(307, -178)
+position = Vector2(314, -178)
 rotation = -0.0168869
 
 [node name="GreenTreeSmall_png174" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(307, -238)
+position = Vector2(315, -239)
 
 [node name="GreenTreeSmall_png175" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(307, -261)
@@ -1815,7 +1822,7 @@ position = Vector2(488.402, -316)
 position = Vector2(454.902, -315.657)
 
 [node name="GreenTreeSmall_png139" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(307, -153)
+position = Vector2(313, -152)
 rotation = -0.0168869
 
 [node name="GreenTreeSmall_png140" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
@@ -1871,10 +1878,10 @@ position = Vector2(225, -16)
 rotation = -0.0168869
 
 [node name="GreenTreeSmall_png10" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(101, -105)
+position = Vector2(84, -109)
 
 [node name="GreenTreeSmall_png11" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(81, -103)
+position = Vector2(81, -111)
 
 [node name="GreenTreeSmall_png12" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(81, -122)
@@ -2228,10 +2235,10 @@ position = Vector2(22, -338)
 position = Vector2(92.5, -336)
 
 [node name="GreenTreeSmall_png57" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(6, -204)
+position = Vector2(5, -192)
 
 [node name="GreenTreeSmall_png58" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
-position = Vector2(6, -185)
+position = Vector2(6, -175)
 
 [node name="GreenTreeSmall_png59" parent="TREEMAZE" instance=ExtResource("13_7tloh")]
 position = Vector2(-148, -249)
@@ -2335,3 +2342,15 @@ scale = Vector2(0.999815, 1.05212)
 texture = ExtResource("16_2gicg")
 region_enabled = true
 region_rect = Rect2(32, 192, 128, 19)
+
+[node name="Dark" type="Area2D" parent="."]
+script = ExtResource("18_nyt27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dark"]
+position = Vector2(161.5, -179)
+shape = SubResource("RectangleShape2D_fgdj0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Dark"]
+stream = ExtResource("11_7juw6")
+
+[connection signal="body_entered" from="Dark" to="Dark" method="_on_body_entered"]
