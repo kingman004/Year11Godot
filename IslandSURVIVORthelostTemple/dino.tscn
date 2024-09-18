@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://06q1vvwdrsdq"]
+
+[ext_resource type="Texture2D" uid="uid://dfcdf8himkbg" path="res://player/doux/egg/move.png" id="1_tb64n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le3fd"]
+atlas = ExtResource("1_tb64n")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvbbu"]
+atlas = ExtResource("1_tb64n")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwv4j"]
+atlas = ExtResource("1_tb64n")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhuco"]
+atlas = ExtResource("1_tb64n")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xc6ue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le3fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvbbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwv4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhuco")
+}],
+"loop": true,
+"name": &"egg",
+"speed": 5.0
+}]
+
+[node name="Dino" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xc6ue")
+animation = &"egg"
+frame = 3
+frame_progress = 0.651064
