@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjtxdqbxuwti8"]
+
+[ext_resource type="PackedScene" uid="uid://06q1vvwdrsdq" path="res://dino.tscn" id="1_2fg6r"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Dino" parent="." instance=ExtResource("1_2fg6r")]
+position = Vector2(273, 244)

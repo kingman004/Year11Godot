@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c72femvj7j6gw"]
+[gd_scene load_steps=44 format=3 uid="uid://c72femvj7j6gw"]
 
 [ext_resource type="PackedScene" uid="uid://dhdaq1vmkatbq" path="res://scenes/player.tscn" id="1_d0qyc"]
 [ext_resource type="Texture2D" uid="uid://c7cn5qr6yt5x5" path="res://world/survival/Ground_Tiles.png" id="2_878p0"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scenes/dark.gd" id="18_nyt27"]
 [ext_resource type="Texture2D" uid="uid://t8532rdn2iv8" path="res://world/survival/Floor_Walls-1.png.png" id="20_5ucip"]
 [ext_resource type="Texture2D" uid="uid://ch7v851disajj" path="res://world/survival/Floor_Walls-2.png.png" id="21_hb77d"]
+[ext_resource type="PackedScene" uid="uid://06q1vvwdrsdq" path="res://dino.tscn" id="22_28y7f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_memly"]
 atlas = ExtResource("13_j1thp")
@@ -644,6 +645,7 @@ size = Vector2(25, 28)
 y_sort_enabled = true
 
 [node name="dark" type="ColorRect" parent="."]
+visible = false
 z_index = 15
 offset_left = -38560.0
 offset_top = -21102.0
@@ -4561,5 +4563,9 @@ texture = ExtResource("21_hb77d")
 z_index = -2
 position = Vector2(536, -743)
 texture = ExtResource("21_hb77d")
+
+[node name="Dino" parent="." instance=ExtResource("22_28y7f")]
+position = Vector2(636, -503)
+chase_range = 300.0
 
 [connection signal="body_entered" from="Dark" to="Dark" method="_on_body_entered"]
